@@ -147,15 +147,17 @@ class Carousel3D {
     }
 
     addTouchControls() {
-        let startX = 0;
-        let endX = 0;
+        this.startX = 0;
+        this.endX = 0;
 
         this.carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
+            this.startX = e.touches[0].clientX;
+            console.log('Touch start:', this.startX);
         });
 
         this.carousel.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
+            this.endX = e.changedTouches[0].clientX;
+            console.log('Touch end:', this.endX);
             this.handleSwipe();
         });
 
@@ -205,13 +207,18 @@ class Carousel3D {
     }
 
     handleSwipe() {
-        const diff = startX - endX;
+        const diff = this.startX - this.endX;
+        console.log('Swipe diff:', diff, 'startX:', this.startX, 'endX:', this.endX);
+        
         if (Math.abs(diff) > 80) { // Minimum swipe distance
+            console.log('Swipe detected!', diff > 0 ? 'Left swipe (next)' : 'Right swipe (prev)');
             if (diff > 0) {
                 this.rotateRight(); // Swipe left, rotate right
             } else {
                 this.rotateLeft(); // Swipe right, rotate left
             }
+        } else {
+            console.log('Swipe too short:', Math.abs(diff));
         }
     }
 }
