@@ -1,0 +1,26 @@
+name: django-portfolio
+
+services:
+  - name: web
+    git:
+      branch: master
+    instance_type: nano
+    ports:
+      - port: 8000
+        protocol: http
+    env:
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "*"
+    health_checks:
+      - http:
+          port: 8000
+          path: /
+    docker:
+      dockerfile: Dockerfile
+    regions:
+      - fra
+    scaling:
+      min: 1
+      max: 1

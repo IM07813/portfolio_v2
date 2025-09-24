@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waqar Ahmed - ML Engineer & Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Floating Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://github.com/IM07813" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/waqar-ahmed-a31310258" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="http://stackoverflow.com/users/20765829/waqar" target="_blank" rel="noopener noreferrer" class="social-icon" title="Stack Overflow">
+            <i class="fab fa-stack-overflow"></i>
+        </a>
+        <a href="http://www.upwork.com/freelancers/~01f32343e8f9552c54" target="_blank" rel="noopener noreferrer" class="social-icon" title="Upwork">
+            <span style="font-weight: bold; font-size: 18px;">U</span>
+        </a>
+    </div>
+
+    <div class="section-indicator">
+        <div id="currentSection">Home</div>
+    </div>
+
+    <div class="section-dots" id="sectionDots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+        <div class="dot" data-index="3"></div>
+        <div class="dot" data-index="4"></div>
+    </div>
+
+
+
+    <div class="carousel-container" id="carousel">
+        <!-- HOME PANEL -->
+        <div class="carousel-panel panel-home">
+            <div class="hero-content">
+                <h2>Waqar Ahmed</h2>
+                <div class="role">ML Engineer & Full Stack Developer</div>
+                <div class="subtitle">Building Intelligent Systems • Crafting Digital Experiences</div>
+                <a href="#contact" class="cta-button">Let's Create Something Amazing</a>
+                <a href="#" class="cta-button">Download my CV</a>
+            </div>
+            <div class="image-container">
+                <img src="{% static 'images/new_image-removebg-preview.png' %}" alt="Waqar Ahmed" class="profile-image">
+            </div>
+        </div>
+
+        <!-- SKILLS PANEL -->
+        <div class="carousel-panel panel-skills">
+            <h2>⚡ Skills</h2>
+            <div class="skills-content">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>🧠 Machine Learning Algorithms & Libraries</h3>
+                        <p>TensorFlow, PyTorch, JAX, Scikit-learn, Pandas, Numpy, and advanced ML algorithms for building
+                            intelligent systems.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🗣️ Natural Language Processing (NLP)</h3>
+                        <p>Fine-tuning models for text analysis, sentiment analysis, language generation, and NLP
+                            techniques.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>👁️ Computer Vision</h3>
+                        <p>Deep learning for image processing, object detection, and computer vision pipelines using
+                            TensorFlow and PyTorch.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🚀 Full Stack Web Development</h3>
+                        <p>FARM stack, Django, Next.js, React, Flask, FastAPI, building scalable web applications and APIs.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>☁️ Cloud Computing</h3>
+                        <p>Azure and AWS services for deploying ML models, serverless computing, and cloud infrastructure.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🤖 AI APIs & Models</h3>
+                        <p>Integration with OpenAI, Gemini, Claude, and Hugging Face APIs for advanced AI applications.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>📊 Data Visualization & Databases</h3>
+                        <p>Plotly, Matplotlib for data visualization; SQL and NoSQL databases like PostgreSQL, MongoDB for
+                            data management.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🔧 Programming & Tools</h3>
+                        <p>DSA, Dynamic Programming, Microsoft Office, LibreOffice, no-code platforms like Bubble and
+                            Make.com.</p>
+                    </div>
+                </div>
+
+                <div class="tools-section">
+                    <h3>Tools & Technologies</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <div class="tool-icon">🐍</div>
+                            <div class="tool-name">Python</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🔥</div>
+                            <div class="tool-name">PyTorch</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🧠</div>
+                            <div class="tool-name">TensorFlow</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">☁️</div>
+                            <div class="tool-name">Azure</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🐳</div>
+                            <div class="tool-name">AWS</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">⚙️</div>
+                            <div class="tool-name">JAX</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">⚛️</div>
+                            <div class="tool-name">React</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🐘</div>
+                            <div class="tool-name">Next.js</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🍃</div>
+                            <div class="tool-name">Django</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🔍</div>
+                            <div class="tool-name">JavaScript</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">📊</div>
+                            <div class="tool-name">Golang</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">🔧</div>
+                            <div class="tool-name">C++</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTS PANEL -->
+        <div class="carousel-panel panel-projects">
+            <h2>💼 Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>📱 LinkedIn and Facebook Content Generator Web App (SNAPGORITHM)</h3>
+                    <p>Built with Django and PostgreSQL, agentic content generation using LangGraph and Gemini API,
+                        automated posting via LinkedIn and Facebook APIs, cron job scheduling, WhatsApp notifications,
+                        social auth. Deployed on Railway.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🏢 Agentic CRM for Real Estate Company</h3>
+                    <p>Developed with FARM stack, role-based access control, Claude API, LangGraph, Cloudinary for
+                        images, MongoAtlas DB, WhatsApp and email notifications.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🏠 Real Estate Site</h3>
+                    <p>Created using Next.js and MongoDB, property listings and blogs, user submissions with admin
+                        approval, CRUD operations for properties and blogs, separate admin panel.</p>
+                </div>
+                <div class="project-card">
+                    <h3>📺 Detecting Ads on Live TV Using Deep Learning</h3>
+                    <p>Used deep learning architectures to detect commercial starts and categorize ads. Detailed
+                        pipeline available, source code under NDA.</p>
+                </div>
+                <div class="project-card">
+                    <h3>⚽ Predicting Odds of Sports Games Using Unsupervised Learning</h3>
+                    <p>Used DBSCAN to find relative average predictions compared to bookmakers, detects errors if
+                        variance exceeds threshold.</p>
+                </div>
+                <div class="project-card">
+                    <h3>♟️ MCTS-UCB-Transformer-Ensemble</h3>
+                    <p>Chess engine using encoder-only transformer, UCB, and MCTS in ensemble for real-time play via
+                        terminal.</p>
+                </div>
+                <div class="project-card">
+                    <h3>😊 Sentiment Analysis with BERT</h3>
+                    <p>Fine-tuned Google BERT for analyzing sentiment in user comments and responses.</p>
+                </div>
+                <div class="project-card">
+                    <h3>📝 Essay Evaluation</h3>
+                    <p>Fine-tuned BERT with grammar and spelling checks to evaluate essays with IELTS band scores.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🤖 Chat-bot for Physics Questions</h3>
+                    <p>Fine-tuned Llama model on custom dataset to answer physics-related questions accurately.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🧠 Transformer Models for Generative AI</h3>
+                    <p>Decoder-only architecture for predicting and generating language sequences.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🎨 ViT-VQ-GAN for Image Generation</h3>
+                    <p>Implemented Vision Transformer with VQ-GAN for image generation, compared with StyleGAN and
+                        diffusion models.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS PANEL -->
+        <div class="carousel-panel panel-certifications">
+            <h2>🏆 Certifications & Credentials</h2>
+            <div class="cert-item">
+                <div class="cert-title">Microsoft Azure Data Scientist Associate</div>
+                <div class="cert-issuer">Microsoft</div>
+                <div class="cert-date">January 2025</div>
+            </div>
+            <p>Continuous learning in AI/ML, cloud technologies, and software development. Always expanding expertise to
+                stay at the forefront of technology.</p>
+        </div>
+
+        <!-- CONTACT PANEL -->
+        <div class="carousel-panel panel-contact">
+            <h2>📧 Let's Build Together</h2>
+            <div class="contact-form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" name="message" placeholder="Tell me about your project..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="arrow-btn" id="leftArrow">←</button>
+        <button class="arrow-btn" id="rightArrow">→</button>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
