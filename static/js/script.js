@@ -34,6 +34,11 @@ class Carousel3D {
 
         // Touch/swipe controls for mobile
         this.addTouchControls();
+        
+        // Handle window resize for responsive behavior
+        window.addEventListener('resize', () => {
+            this.updateCarousel();
+        });
     }
 
     rotateRight() {
@@ -90,34 +95,55 @@ class Carousel3D {
     }
 
     updateCarousel() {
-        this.carousel.style.transform = `translate(-50%, -50%) rotateY(${this.currentRotation}deg)`;
-        this.sectionIndicator.textContent = this.sections[this.currentIndex];
+        const isMobile = window.innerWidth <= 480;
+        
+        if (isMobile) {
+            // Mobile: Use simple positioning without 3D transforms
+            const panels = document.querySelectorAll('.carousel-panel');
+            panels.forEach((panel, index) => {
+                if (index === this.currentIndex) {
+                    panel.classList.add('front-panel');
+                } else {
+                    panel.classList.remove('front-panel');
+                }
+            });
+        } else {
+            // Desktop: Use 3D carousel
+            this.carousel.style.transform = `translate(-50%, -50%) rotateY(${this.currentRotation}deg)`;
+            
+            // Update front panel styling - make active panel fully visible
+            const panels = document.querySelectorAll('.carousel-panel');
+            panels.forEach((panel, index) => {
+                if (index === this.currentIndex) {
+                    panel.classList.add('front-panel');
+                } else {
+                    panel.classList.remove('front-panel');
+                }
+            });
+
+            // Add a subtle pulse effect to the active section on desktop
+            panels.forEach(panel => panel.style.filter = 'brightness(0.8)');
+
+            setTimeout(() => {
+                panels[this.currentIndex].style.filter = 'brightness(1.2)';
+                setTimeout(() => {
+                    panels[this.currentIndex].style.filter = 'brightness(1)';
+                }, 200);
+            }, 100);
+        }
+
+        // Update section indicator and dots (hidden on mobile via CSS)
+        if (this.sectionIndicator) {
+            this.sectionIndicator.textContent = this.sections[this.currentIndex];
+        }
 
         // Update dots
-        const dots = this.sectionDots.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentIndex);
-        });
-
-        // Update front panel styling - make active panel fully visible
-        const panels = document.querySelectorAll('.carousel-panel');
-        panels.forEach((panel, index) => {
-            if (index === this.currentIndex) {
-                panel.classList.add('front-panel');
-            } else {
-                panel.classList.remove('front-panel');
-            }
-        });
-
-        // Add a subtle pulse effect to the active section
-        panels.forEach(panel => panel.style.filter = 'brightness(0.8)');
-
-        setTimeout(() => {
-            panels[this.currentIndex].style.filter = 'brightness(1.2)';
-            setTimeout(() => {
-                panels[this.currentIndex].style.filter = 'brightness(1)';
-            }, 200);
-        }, 100);
+        if (this.sectionDots) {
+            const dots = this.sectionDots.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === this.currentIndex);
+            });
+        }
     }
 
     addTouchControls() {
